@@ -3,8 +3,16 @@
  */
 public abstract class GameCharacter {
 
-    protected Guitar mGuitar;
-    protected Solo mSolo;
+    private Guitar mGuitar;
+    private Solo mSolo;
+
+    public GameCharacter(Solo solo){
+
+    }
+
+    public GameCharacter(Guitar guitar){
+
+    }
 
     /**
      *
