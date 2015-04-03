@@ -1,5 +1,5 @@
 /**
- * Created by ben on 4/2/15.
+ * Created by Benjamin Daschel on 4/2/15.
  */
 public class Slash extends GameCharacter {
     @Override
