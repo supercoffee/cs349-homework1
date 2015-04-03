@@ -26,12 +26,26 @@ public abstract class GameCharacter {
         return this;
     }
 
+    /**
+     * Display a message on the screen about the guitar being played.
+     * Sorry, it doesn't really play audio.
+     */
     public void playGuitar(){
         mGuitar.play();
     }
 
+    /**
+     * Display a message about the character performing a ridiculous solo.
+     * Just use your imagination.
+     */
     public void performSolo(){
         mSolo.perform();
     }
+
+    public void sayName(){
+        System.out.println(this.getName());
+    }
+
+    protected abstract String getName();
 
 }
