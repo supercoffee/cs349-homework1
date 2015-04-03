@@ -47,7 +47,7 @@ public abstract class GameCharacter {
      */
     public void performSolo(){
         if (mSolo != null) {
-            mSolo.perform();
+            mSolo.performSolo();
         }
     }
 

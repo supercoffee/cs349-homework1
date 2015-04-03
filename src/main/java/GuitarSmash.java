@@ -3,7 +3,7 @@
  */
 public class GuitarSmash implements Solo {
     @Override
-    public void perform() {
+    public void performSolo() {
         System.out.println("Smashing a my guitar!!");
     }
 }

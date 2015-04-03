@@ -3,7 +3,7 @@
  */
 public class GuitarOnFire implements Solo {
     @Override
-    public void perform() {
+    public void performSolo() {
         System.out.println("Lighting guitar on fire!!");
     }
 }

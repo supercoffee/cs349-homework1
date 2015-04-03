@@ -3,7 +3,7 @@
  */
 public class StageJump implements Solo {
     @Override
-    public void perform() {
+    public void performSolo() {
         System.out.println("Jumping from the stage!!");
     }
 }
