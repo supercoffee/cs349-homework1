@@ -40,8 +40,7 @@ public class Homework1 {
             /*
                 And now boys and girls, that's what a fluent interface looks like.
                 In the case of some more complex classes where many options can be specified,
-                a Builder class is used instead. The Builder class will usually contain all the setters
-                with the validation logic and state machine management and simply output a ready to use object.
+                a Builder class is used instead.
              */
             gc.setGuitar(guitar)
                     .setSolo(solo);

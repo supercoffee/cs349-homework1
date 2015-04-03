@@ -15,8 +15,8 @@ Windows: `gradlew.bat run`
 ## Q & A
 ***
 **Question:** Why didn't you create a constructor for any of the character classes?
-**Answer:** As I began to implement the pattern, I realized that some of the limitations of Java required me to duplicate a lot of code. Exhibit A, the constructor dinosour.  This ancient creature was conceived long before the notion of inherited explicit valued constructors (EVCs). Contrast this with PHP where subclasses can inherit EVCs from the parent class for free. Consider the following from the _perspective of a programmer implementing a concrete class from someone else's superclass_. 
-Why should a subclass be forced to pass on all the arguments to it's superclass when those arguments will be assigned to private variables inside the superclass anyways? The previous notion is especially frustrating considering that the superconstructor call must be the first function called inside an EVC.  This can make maintaining constructors between multiple levels of classes into a mess. And once you've implemented an EVC in a subclass, you lose the free *sensible defaults contructor* (SDC) provided by Java.  And if you try to implement an SDC in the subclass, the compiler complains that the superclass does not have an SDC.  You probably have the source code, but chances are that it's part of a library.  Do you really want to risk breaking compatibility with the upstream library? No.
+**Answer:** As I began to implement the pattern, I realized that some of the limitations of Java required me to duplicate a lot of code. Exhibit A, the constructor dinosaur.  This ancient creature was conceived long before the notion of inherited explicit valued constructors (EVCs). Contrast this with PHP where subclasses can inherit EVCs from the parent class for free. Consider the following from the _perspective of a programmer implementing a concrete class from someone else's superclass_. 
+Why should a subclass be forced to pass on all the arguments to it's superclass when those arguments will be assigned to private variables inside the superclass anyways? The previous notion is especially frustrating considering that the super-constructor call must be the first function called inside an EVC.  This can make maintaining constructors between multiple levels of classes into a mess. And once you've implemented an EVC in a subclass, you lose the free *sensible defaults constructor* (SDC) provided by Java.  And if you try to implement an SDC in the subclass, the compiler complains that the superclass does not have an SDC.  You probably have the source code, but chances are that it's part of a library.  Do you really want to risk breaking compatibility with the upstream library? No.
 
 
 Let's say the library you are using has the following abstract class and you are making a concrete implementation of it.  
@@ -80,7 +80,7 @@ If you happen to be one of the kind library creators and include several constru
 
 ```
 
-This kind of this will create an ambiguous constructor error during compile if the caller of your constructor decides to pass a `null` argument for any of the nullable arguments. **Example:** ` new JsonRequest(0, "http://example.com", successListener, null);` Don't believe me? Check out the `demo/passing_nulls_from_default_constructor` branch of my repository and try to compile it with Java 7.  Of course, none of this ambiguous `null` stuff would be a problem if you _never_ allow nullables. But then, you would have to implement a constructor for every conceivable scenario. But that's an obscene amount of boilerplate...  
+This scenario will evoke an ambiguous constructor error during compile if the caller of your constructor decides to pass a `null` argument for any of the nullable arguments. **Example:** ` new JsonRequest(0, "http://example.com", successListener, null);` Don't believe me? Check out the `demo/passing_nulls_from_default_constructor` branch of my repository and try to compile it with Java 7.  Of course, none of this ambiguous `null` stuff would be a problem if you _never_ allow nullable values. But then, you would have to implement a constructor for every conceivable scenario. But that's an obscene amount of boilerplate...  
 
 ###tl;dr
  Explicit value constructors in Java...
@@ -111,8 +111,8 @@ Advanced use cases for the Fluent interface allow the implementer to control whi
  * has been followed will it be able to do something cool. Hence why it is a fragile 
  * state machine.
  *
- * For the purpose of real worldness, imagine that our FragileStateMachine is a
- * MediaPlayer that takes a filename,  opens the file, decodes the audio from 
+ * For the purpose of real-world ness, imagine that our FragileStateMachine is a
+ * MediaPlayer that takes a file name,  opens the file, decodes the audio from 
  * the file, lets you specify a few flags,  and finally lets you play back
  * an audio track.  However, you have to call all those methods in the right order 
  * otherwise  the whole thing blows up.
