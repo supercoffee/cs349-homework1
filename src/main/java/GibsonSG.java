@@ -1,0 +1,9 @@
+/**
+ * Created by ben on 4/2/15.
+ */
+public class GibsonSG implements Guitar {
+    @Override
+    public void play() {
+
+    }
+}
