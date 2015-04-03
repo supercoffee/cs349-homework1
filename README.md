@@ -83,7 +83,10 @@ This kind of this will create an ambiguous constructor error during compile if t
 
     
 **Question:** Why do all your setters return `this`?
-**Answer:** Since I chose not use EVCs on the GameCharacter classes, it seemed reasonable to create a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface) (FI).  Fluent interfaces allow implementing programmers to create custom objects on the fly in a readable self-documenting manner.  Very basic fluid interfaces can simply  be retrofitted to existing classes by returning values from setters. Advanced use cases for the Fluent interface allow the implementer to control which order the methods are called in.  Consider an object that must be initialized in a certain sequence.  Normally, using setters, you would have to internally track the state of the object and check the state in each setter to ensure proper order is followed.  If the order is violated, the only reasonable action is to throw an `InvalidStateException`.  Consider a fragile state machine whose various states must be transitioned to in a specific order before something cool can happen. 
+
+**Answer:** Since I chose not use EVCs on the GameCharacter classes, it seemed reasonable to create a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface).  Fluent interfaces allow implementing programmers to create custom objects on the fly in a readable self-documenting manner.  Very basic fluid interfaces can simply  be retrofitted to existing classes by returning values from setters. 
+
+Advanced use cases for the Fluent interface allow the implementer to control which order the methods are called in.  Consider an object that must be initialized in a certain sequence.  Normally, using setters, you would have to internally track the state of the object and check the state in each setter to ensure proper order is followed.  If the order is violated, the only reasonable action is to throw an `InvalidStateException`.  Consider a fragile state machine whose various states must be transitioned to in a specific order before something cool can happen. If you'd like to run this code, please have a look at my [java-fluent-demo](https://github.com/supercoffee/java-fluent-demo) repo on Github. 
 
 ```java
 /**
@@ -93,21 +96,21 @@ This kind of this will create an ambiguous constructor error during compile if t
  * doOptionalThirdThing()
  * doForthThing()
  *
- * If the order is not followed, an exception will be thrown.  Only once this sequence has been
- * followed will it be able to do something cool. Hence why it is a fragile state machine.
+ * If the order is not followed, an exception will be thrown.  Only once this sequence
+ * has been followed will it be able to do something cool. Hence why it is a fragile 
+ * state machine.
  *
- * For the purpose of real worldness, imagine that our FragileStateMachine is a MediaPlayer 
- * that takes a filename,
- * opens the file, decodes the audio from the file, lets you specify a few flags, and finally 
- * lets you play back
- * an audio track.  However, you have to call all those methods in the right order otherwise 
- * the whole thing
- * blows up.
+ * For the purpose of real worldness, imagine that our FragileStateMachine is a
+ * MediaPlayer that takes a filename,  opens the file, decodes the audio from 
+ * the file, lets you specify a few flags,  and finally lets you play back
+ * an audio track.  However, you have to call all those methods in the right order 
+ * otherwise  the whole thing blows up.
  *
- * Notice that the FragileStateMachine has no references to it's builder.  That means that 
- * we have a one  way relationship here.  The FragileStateMachine has no influence over the builder.  
- * Also notice how the only way to get a ready-to-use FragileStateMachine is to follow
- * the method chain required by the builder.  No more complex state transition checks needed.
+ * Notice that the FragileStateMachine has no references to it's builder.  That 
+ * means that  we have a one  way relationship here.  The FragileStateMachine has
+ * no influence  over the builder.  Also notice how the only way to get a 
+ * ready-to-use FragileStateMachine is to follow the method chain required
+ * by the builder.  No more complex state transition checks needed.
  *
  */
 public class FragileStateMachine {
@@ -148,8 +151,8 @@ public class FragileStateMachine {
         }
 
         /**
-         * The actual logic of the first step is encapsulated by the BuilderStep1 class.
-         * Any data validation logic could go in here too.
+         * The actual logic of the first step is encapsulated by the 
+		  * BuilderStep1 class. Any data validation logic could go in here too.
          */
         public class BuilderStep1{
             public BuilderStep2 step1(String filename){
@@ -159,7 +162,7 @@ public class FragileStateMachine {
         }
 
         /**
-         * Just do step2 and return a BuilderStep3
+         * Just do step2 and return a BuilderStep3. 
          */
         public class BuilderStep2{
             public BuilderStep3 step2(String args){
@@ -170,8 +173,8 @@ public class FragileStateMachine {
 
         /**
          * Because this step 3 on the FragileStateMachine is optional,
-         * we implement the optional step here, and delegate the next step's implementation
-         * to the BuilderStep4 class.
+         * we implement the optional step here, and delegate the next step's 
+		  * implementation to the BuilderStep4 class.
          */
         public class BuilderStep3{
             public BuilderStep4 optionalStep3(int flags){
@@ -206,6 +209,3 @@ public class FragileStateMachine {
 
 ```
 
-
-
-Changes my strategy as I implement the pattern.  See what I did there? Strategy pattern. 
