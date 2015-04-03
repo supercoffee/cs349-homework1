@@ -4,6 +4,6 @@
 public class GibsonSG implements Guitar {
     @Override
     public void play() {
-
+        System.out.println("Playing Gibson SG!");
     }
 }

@@ -4,6 +4,6 @@
 public class GuitarOnFire implements Solo {
     @Override
     public void perform() {
-
+        System.out.println("Lighting guitar on fire!!");
     }
 }
