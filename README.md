@@ -1,7 +1,18 @@
-## Homework 1
+# Homework 1
 Hello world! My name is Dr Read Me, MD. I am here today to present to you my latest work of `code formatting artwork!!`
 
-#### Q & A
+## How to build and run this project
+***
+
+**Building**
+Mac/Linux: `./gradlew build`
+Windows: `gradlew.bat build`
+
+**Running**
+Mac/Linux: `./gradlew run`
+Windows: `gradlew.bat run`
+
+## Q & A
 ***
 **Question:** Why didn't you create a constructor for any of the character classes?
 **Answer:** As I began to implement the pattern, I realized that some of the limitations of Java required me to duplicate a lot of code. Exhibit A, the constructor dinosour.  This ancient creature was conceived long before the notion of inherited explicit valued constructors (EVCs). Contrast this with PHP where subclasses can inherit EVCs from the parent class for free. Consider the following from the _perspective of a programmer implementing a concrete class from someone else's superclass_. 
