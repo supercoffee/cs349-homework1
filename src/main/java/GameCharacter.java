@@ -29,6 +29,8 @@ public abstract class GameCharacter {
     /**
      * Display a message on the screen about the guitar being played.
      * Sorry, it doesn't really play audio.
+     *
+     * If the behavior hasn't been set, the method simply returns.
      */
     public void playGuitar(){
         //too bad I can't just check if(!mGuitar) like C or PHP
@@ -40,6 +42,8 @@ public abstract class GameCharacter {
     /**
      * Display a message about the character performing a ridiculous solo.
      * Just use your imagination.
+     *
+     * If the behavior hasn't been set, the method simply returns.
      */
     public void performSolo(){
         if (mSolo != null) {
