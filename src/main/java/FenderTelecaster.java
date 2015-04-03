@@ -4,6 +4,6 @@
 public class FenderTelecaster implements Guitar {
     @Override
     public void play() {
-
+        System.out.println("Playing Fender Telecaster!");
     }
 }

@@ -4,6 +4,6 @@
 public class GuitarSmash implements Solo {
     @Override
     public void perform() {
-
+        System.out.println("Smashing a my guitar!!");
     }
 }

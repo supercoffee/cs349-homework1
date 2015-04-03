@@ -4,6 +4,6 @@
 public class StageJump implements Solo {
     @Override
     public void perform() {
-
+        System.out.println("Jumping from the stage!!");
     }
 }
