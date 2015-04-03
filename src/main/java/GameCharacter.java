@@ -3,8 +3,15 @@
  */
 public abstract class GameCharacter {
 
-    protected Guitar mGuitar;
-    protected Solo mSolo;
+    private Guitar mGuitar;
+    private Solo mSolo;
+    private String nName;
+
+    public GameCharacter(Guitar guitar, Solo solo, String name){
+        mGuitar = guitar;
+        //...
+    }
+
 
     /**
      *
