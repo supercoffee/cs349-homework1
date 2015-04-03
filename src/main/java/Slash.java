@@ -4,6 +4,6 @@
 public class Slash extends GameCharacter {
     @Override
     protected String getName() {
-        return null;
+        return "Slash";
     }
 }

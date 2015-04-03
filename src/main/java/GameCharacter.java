@@ -31,7 +31,10 @@ public abstract class GameCharacter {
      * Sorry, it doesn't really play audio.
      */
     public void playGuitar(){
-        mGuitar.play();
+        //too bad I can't just check if(!mGuitar) like C or PHP
+        if (mGuitar != null) {
+            mGuitar.play();
+        }
     }
 
     /**
@@ -39,7 +42,9 @@ public abstract class GameCharacter {
      * Just use your imagination.
      */
     public void performSolo(){
-        mSolo.perform();
+        if (mSolo != null) {
+            mSolo.perform();
+        }
     }
 
     public void sayName(){

@@ -4,6 +4,6 @@
 public class AngusYoung extends GameCharacter {
     @Override
     protected String getName() {
-        return null;
+        return "Angus Young";
     }
 }

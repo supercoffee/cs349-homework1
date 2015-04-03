@@ -4,6 +4,6 @@
 public class JimiHendrix extends GameCharacter {
     @Override
     protected String getName() {
-        return null;
+        return "Jimi Hendrix";
     }
 }
