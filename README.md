@@ -71,11 +71,16 @@ If you happen to be one of the kind library creators and include several constru
 
 ```
 
-This kind of this will create an ambiguous constructor error during compile if the caller of your constructor decides to pass a null argument for any of the nullable arguments. **Example:** ` new JsonRequest(0, "http://example.com", successListener, null);`
+This kind of this will create an ambiguous constructor error during compile if the caller of your constructor decides to pass a null argument for any of the nullable arguments. **Example:** ` new JsonRequest(0, "http://example.com", successListener, null);` Don't believe me? Check out the `demo/passing_nulls_from_default_constructor` branch of my repository and try to compile it with Java 7. 
 
 I think you can see where this is going. Maintaining constructors in Java can quickly turn into a huge headache.  
+
+
+
+
+
     
-**Question:** Why do all your setters return `this`? <br>
+**Question:** Why do all your setters return `this`?
 **Answer:** Since I chose not use EVCs on the GameCharacter classes, it seemed reasonable to create a fluent interface (FI).  Fluent interfaces allow implementing programmers to create custom objects on the fly in a self documenting manner.  Why should a setter return nothing when it can return something useful to the caller?
 
 Q: 
