@@ -1,6 +1,10 @@
-# Homework 1
-Hello world! My name is Dr Read Me, MD. I am here today to present to you my latest work of `code formatting artwork!!`
+**Benjamin Daschel**
+**CS 349 Spring 2015**
+**Homework 1**
 
+## About
+***
+This project covers the use of the strategy pattern in Java.  There is no CLI for this project, only an automated test runner main program. This project demonstrates the use of the strategy pattern to dynamically change the behavior of objects during runtime. 
 ## How to build and run this project
 ***
 
@@ -80,7 +84,7 @@ If you happen to be one of the kind library creators and include several constru
 
 ```
 
-This scenario will evoke an ambiguous constructor error during compile if the caller of your constructor decides to pass a `null` argument for any of the nullable arguments. **Example:** ` new JsonRequest(0, "http://example.com", successListener, null);` Don't believe me? Check out the `demo/passing_nulls_from_default_constructor` branch of my repository and try to compile it with Java 7.  Of course, none of this ambiguous `null` stuff would be a problem if you _never_ allow nullable values. But then, you would have to implement a constructor for every conceivable scenario. But that's an obscene amount of boilerplate...  
+This scenario will evoke an ambiguous constructor error during compile if the caller of your constructor decides to pass a `null` argument for any of the nullable arguments. **Example:** ` new JsonRequest(0, "http://example.com", successListener, null);` Don't believe me? Check out the `demo/passing_nulls_from_default_constructor` branch of my repository and try to compile it with Java 7.  Of course, none of this ambiguous `null` stuff would be a problem if you _never_ allow nullable values. But then, you would have to implement a constructor for every configuration scenario you want to accommodate, which results in the creation of boiler plate code.   
 
 ###tl;dr
  Explicit value constructors in Java...
